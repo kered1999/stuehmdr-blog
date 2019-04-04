@@ -20,20 +20,29 @@ public class BlogApplication {
     SpringApplication.run(BlogApplication.class, args);
   }
 
-  @Bean
-  public RouteLocator routes(RouteLocatorBuilder builder) {
-    return builder.routes()
+    @Bean
+    public RouteLocator routes(RouteLocatorBuilder builder) {
+        return builder.routes()
 
-        .route("profiles", p -> p
-            .path("/profiles/**")
-            .uri(userUri))
+                .route("profiles", p -> p
+                        .path("/profiles/**")
+                        .uri(userUri))
 
-        .route("posts", p -> p
-            .path("/posts/**")
-            .uri(postUri))
+                .route("signup", p -> p
+                        .path("/signup")
+                        .uri(userUri))
 
-        .build();
-  }
+                .route("posts", p -> p
+                        .path("/posts/**")
+                        .uri(postUri))
+
+                .route("oauth", p -> p
+                        .path("/oauth/**")
+                        .uri(userUri))
+
+
+                .build();
+    }
 
 }
 
