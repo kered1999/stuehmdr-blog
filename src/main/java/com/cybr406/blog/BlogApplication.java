@@ -24,11 +24,11 @@ public class BlogApplication {
   public RouteLocator routes(RouteLocatorBuilder builder) {
     return builder.routes()
 
-        .route("profiles", p -> p
-            .path("/profiles/**")
+        .route("user", p -> p
+            .path("/profiles/**", "/signup", "/oauth/**")
             .uri(userUri))
 
-        .route("posts", p -> p
+        .route("post", p -> p
             .path("/posts/**")
             .uri(postUri))
 
