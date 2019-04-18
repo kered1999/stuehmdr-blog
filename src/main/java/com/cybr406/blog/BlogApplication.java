@@ -34,7 +34,4 @@ public class BlogApplication {
 
         .build();
   }
-
-
 }
-
